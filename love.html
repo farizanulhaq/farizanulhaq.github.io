@@ -9,7 +9,7 @@
 <link href="assets/love.png" rel="icon">
 <link href="assets/love.png" rel="logo-icon">
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script language="JavaScript"> 
  
 function tb5_makeArray(n){
@@ -95,7 +95,7 @@ tb5_randomizetitle();
 <center><center>
 <br><b><font size="6"><font color="white" face="courier new">Hei You ;*</font></b>
 <br><br>
-<font size="5"><font color="white" face="courier new">I'm telling you from the deepest of my heart that I really love you,it's been a long time, and now I want to ask you, will you be my girlfriend?</font>
+<font size="5"><font color="white" face="courier new">Every time I see you, it's like the world pauses and everything around me fades away, because nothing else matters when you're near, and I can't help but hope that you feel the same way, because my heart has already chosen you—so, would you be willing to make me the happiest person on earth by being mine?</font>
 <br><br><input class="button-terima" type="button" value="Yes I do" onclick="terima();" style="font size="5"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="button-tolak" type="button" value=" Im sorry" onclick="tolak();" style="font size="5"><br><br><input class="button-music" type="button" value="Play Music" onclick="play();">
 <hr color="blue">
 <font size="5"><b></b><font color="white" face="courier new">Support Me:</font><br><br>
@@ -184,30 +184,59 @@ position: absolute;top: 0;left: 0;z-index: 3000;cursor: default;}
 #outerCircleText div {position: relative;}
 #outerCircleText div div {position: absolute;top: 0;left: 0;text-align: center;}
 
+.swal2-title {
+    color: #FFFFFF!important;  /* Merah tomat untuk judul */
+}
+
+        /* CSS untuk mengubah warna teks */
+.swal2-text {
+    color: #ffffff !important;  /* Biru untuk teks */
+}
+    
 </style>
 <script type="text/javascript">
 
 function terima() {
-	swal({
-		title: 'Yeyyy',
-		text: 'Thank You So Much;*',
-		imageUrl: 'assets/sticker_16.gif',
-		imageWidth: 200,
-		imageHeight: 200,
-		imageAlt: 'Yeyyyyy',
-		footer: '<a href="https://wa.me/6285183156871">Text Me Please ;)</a>'
-	});
+    Swal.fire({
+        title: 'Yeyyy',  // Judul
+        text: 'Thank You So Much;*',  // Teks
+        imageUrl: 'assets/sticker_16.gif',  // Gambar yang ditampilkan
+        imageWidth: 200,  // Lebar gambar
+        imageHeight: 200,  // Tinggi gambar
+        imageAlt: 'Yeyyyyy',  // Alt text gambar
+        footer: '<a href="https://wa.me/6285183156871">Text Me Please ;)</a>',  // Footer dengan link
+        background: 'url(assets/sky.jpg)',  // Ganti dengan URL gambar latar belakang
+        backgroundSize: 'cover',  // Mengatur gambar latar belakang agar memenuhi seluruh pop-up
+        backgroundPosition: 'center',  // Menjaga posisi gambar tetap di tengah
+        backgroundAttachment: 'fixed',  // Agar gambar latar belakang tetap di posisi tetap saat scroll
+        width: 700,  // Mengubah lebar pop-up
+        padding: '3em',  // Mengatur padding di dalam pop-up
+        customClass: {
+            title: 'swal2-title',  // Kelas untuk judul
+            content: 'swal2-text'  // Kelas untuk teks
+        }
+    });
 }
 
 function tolak() {
-	swal({
+	Swal.fire({
 		title: "I'm Fine :)",
 		text: "It's Okay I Can Accept That :)",
 		imageUrl: 'assets/sticker_15.gif',
 		imageWidth: 200,
 		imageHeight: 200,
 		imageAlt: "I'm Fine :)",
-		footer: "Thank's For Time :)"
+		footer: "Thank's For Time :)",
+    background: 'url(assets/sky.jpg)',  // Ganti dengan URL gambar latar belakang
+    backgroundSize: 'cover',  // Mengatur gambar latar belakang agar memenuhi seluruh pop-up
+    backgroundPosition: 'center',  // Menjaga posisi gambar tetap di tengah
+    backgroundAttachment: 'fixed',  // Agar gambar latar belakang tetap di posisi tetap saat scroll
+    width: 700,  // Mengubah lebar pop-up
+    padding: '3em',  // Mengatur padding di dalam pop-up
+    customClass: {
+        title: 'swal2-title',  // Kelas untuk judul
+        content: 'swal2-text'  // Kelas untuk teks
+      }
 	});
 }
 
