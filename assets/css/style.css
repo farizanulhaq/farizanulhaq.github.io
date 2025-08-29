@@ -517,9 +517,17 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
-.portfolio .portfolio-item {
-  margin-bottom: 30px;
+.portfolio .portfolio-item img {
+  width: 100%;
+  height: 200px; /* Atau tinggi yang kamu inginkan */
+  object-fit: cover;
+  border-radius: 10px; /* Opsional: biar tampilannya lebih halus */
 }
+
+.portfolio .portfolio-item {
+    margin-bottom: 30px;
+}
+
 
 .portfolio #portfolio-flters {
   padding: 0;
