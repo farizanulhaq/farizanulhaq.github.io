@@ -60,7 +60,7 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="index.html">HOME</a></li>
-            <li><a href="index.html#info">INFO</a></li>
+            <li><a href="about.html">INFO</a></li>
             <li><a href="index.html#gallery">GALLERY</a></li>
             <li><a href="#" class="coming-soon">EVENTS</a></li>
             <li><a href="index.html#members">MEMBERS</a></li>
@@ -82,12 +82,13 @@
       <section class="contact-hero section">
         <div class="container">
           <div class="row justify-content-center text-center">
-            <div class="col-lg-8">
+            <div class="col-lg-8 d-flex flex-column align-items-center">
               <h1 class="contact-title">HUBUNGI KAMI</h1>
               <p class="contact-description">
                 Punya pertanyaan atau ingin bergabung dengan Cassano
                 Syndicate?<br />
-                Hubungi kami melalui form di bawah atau kontak langsung.
+                Hubungi kami langsung melalui WhatsApp dan mulai langkah
+                berikutnya bersama kami.
               </p>
             </div>
           </div>
@@ -129,66 +130,28 @@
             </div>
           </div>
 
-          <form
-            action="forms/contact.php"
-            method="post"
-            class="php-email-form contact-form"
+          <div
+            class="contact-cta-card"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div class="row gy-4">
-              <div class="col-md-6">
-                <input
-                  type="text"
-                  name="name"
-                  class="form-control"
-                  placeholder="Nama Lengkap"
-                  required
-                />
-              </div>
-
-              <div class="col-md-6">
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  placeholder="Email"
-                  required
-                />
-              </div>
-
-              <div class="col-md-12">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="subject"
-                  placeholder="Subjek"
-                  required
-                />
-              </div>
-
-              <div class="col-md-12">
-                <textarea
-                  class="form-control"
-                  name="message"
-                  rows="6"
-                  placeholder="Pesan"
-                  required
-                ></textarea>
-              </div>
-
-              <div class="col-md-12 text-center">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">
-                  Pesan Anda telah terkirim. Terima kasih!
-                </div>
-                <button type="submit" class="btn btn-primary">
-                  KIRIM PESAN
-                </button>
-              </div>
+            <div class="contact-cta-icon">
+              <i class="bi bi-whatsapp"></i>
             </div>
-          </form>
+            <h3>CHAT LANGSUNG</h3>
+            <p>
+              Kamu bisa langsung menghubungi Cassano Syndicate melalui
+              WhatsApp untuk pertanyaan, pendaftaran, atau keperluan
+              komunikasi lainnya.
+            </p>
+            <a
+              href="https://wa.me/+6285183156871?text=Saya+tertarik+untuk+bergabung+dalam+brotherhood+Cassano+Syndicate"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              >HUBUNGI VIA WHATSAPP</a
+            >
+          </div>
         </div>
       </section>
     </main>
@@ -219,7 +182,7 @@
               <h4>NAVIGATION</h4>
               <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="index.html#gallery">Gallery</a></li>
                 <li><a href="#">Events</a></li>
                 <li><a href="index.html#members">Members</a></li>
@@ -274,7 +237,6 @@
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>

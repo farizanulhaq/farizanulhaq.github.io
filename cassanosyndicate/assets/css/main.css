@@ -1132,7 +1132,7 @@ section,
 
 .section-title {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 48px;
 }
 
 .section-title h2 {
@@ -1150,6 +1150,26 @@ section,
   font-weight: 700;
   color: var(--heading-color);
   letter-spacing: 1px;
+  line-height: 1.25;
+}
+
+#identity .row.g-4 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+#identity .identity-grid > .col-lg-6,
+#identity .identity-grid > .col-md-6,
+#identity .identity-grid > .col-12 {
+  display: flex;
+  justify-content: center;
+}
+
+#identity .identity-grid {
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 .value-card {
@@ -1160,6 +1180,83 @@ section,
   text-align: center;
   transition: all 0.3s ease;
   height: 100%;
+  min-height: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100%;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  #identity .value-card {
+    min-height: 320px;
+    padding: 44px 36px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #identity .value-card {
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .value-card {
+    max-width: 100%;
+  }
+}
+
+#about .identity-cards,
+#identity-summary .row.g-4 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#about .identity-cards .col-lg-6,
+#identity-summary .col-lg-6 {
+  display: flex;
+  justify-content: center;
+}
+
+#about .identity-cards .value-card,
+#identity-summary .value-card {
+  width: 100%;
+  max-width: 520px;
+  min-height: 300px;
+  padding: 34px 28px;
+}
+
+#identity-summary .value-card h3,
+#about .identity-cards .value-card h3 {
+  font-size: 18px;
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+}
+
+#identity-summary .value-card p,
+#about .identity-cards .value-card p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+#about .section-title,
+#identity-summary .section-title {
+  margin-bottom: 40px;
+}
+
+.section .row.justify-content-center > .col-lg-8 {
+  display: flex;
+  justify-content: center;
+}
+
+.section .row.justify-content-center > .col-lg-8 > .value-card {
+  width: 100%;
+  max-width: 760px;
 }
 
 .value-card:hover {
@@ -1860,7 +1957,7 @@ section,
 # Contact Section
 --------------------------------------------------------------*/
 .contact-hero {
-  padding: 80px 0;
+  padding: 80px 0 40px;
   background: var(--background-color);
   text-align: center;
 }
@@ -1874,13 +1971,15 @@ section,
 }
 
 .contact-description {
+  max-width: 760px;
   font-size: 18px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   line-height: 1.6;
+  margin: 0 auto;
 }
 
 .contact {
-  padding: 60px 0;
+  padding: 40px 0 80px;
   background: var(--background-color);
 }
 
@@ -1891,6 +1990,7 @@ section,
   border-radius: 8px;
   text-align: center;
   transition: all 0.3s ease;
+  height: 100%;
 }
 
 .contact-info-item:hover {
@@ -1918,39 +2018,48 @@ section,
   margin: 0;
 }
 
-.contact-form {
-  background: transparent;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px;
-}
-
-.contact-form .form-control {
+.contact-cta-card {
+  max-width: 760px;
+  margin: 40px auto 0;
   background: var(--surface-color);
   border: 1px solid var(--border-color);
-  color: var(--default-color);
-  font-size: 14px;
-  padding: 12px 15px;
-  border-radius: 4px;
+  padding: 40px 30px;
+  text-align: center;
+  border-radius: 8px;
   transition: all 0.3s ease;
 }
 
-.contact-form .form-control:focus {
-  background: var(--surface-color);
+.contact-cta-card:hover {
   border-color: var(--accent-color);
-  color: var(--default-color);
-  box-shadow: 0 0 10px rgba(255, 106, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 35px rgba(255, 106, 0, 0.15);
 }
 
-.contact-form .form-control::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+.contact-cta-icon {
+  font-size: 56px;
+  color: var(--accent-color);
+  margin-bottom: 12px;
 }
 
-.contact-form .btn-primary {
+.contact-cta-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-cta-card p {
+  max-width: 620px;
+  margin: 0 auto 22px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  line-height: 1.7;
+}
+
+.contact-cta-card .btn-primary {
   background: var(--accent-color);
   color: white;
   border: none;
-  padding: 14px 50px;
+  padding: 14px 40px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1958,7 +2067,7 @@ section,
   transition: all 0.3s ease;
 }
 
-.contact-form .btn-primary:hover {
+.contact-cta-card .btn-primary:hover {
   background: color-mix(in srgb, var(--accent-color) 90%, white 10%);
   box-shadow: 0 0 35px rgba(255, 106, 0, 0.45);
 }
@@ -1972,14 +2081,7 @@ section,
     font-size: 16px;
   }
 
-  .contact-form {
-    padding: 20px;
+  .contact-cta-card {
+    padding: 28px 20px;
   }
-}
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
 }
