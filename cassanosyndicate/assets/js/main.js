@@ -1,11 +1,3 @@
-/**
- * Template Name: PhotoFolio
- * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
- * Updated: Aug 07 2024 with Bootstrap v5.3.3
- * Author: BootstrapMade.com
- * License: https://bootstrapmade.com/license/
- */
-
 (function () {
   "use strict";
 
@@ -29,75 +21,132 @@
   document.addEventListener("scroll", toggleScrolled);
   window.addEventListener("load", toggleScrolled);
 
-  /**
-   * Mobile nav toggle
-   */
-  const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+/**
+ * Mobile nav
+ */
+const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
 
-  function mobileNavToogle() {
-    document.querySelector("body").classList.toggle("mobile-nav-active");
-    mobileNavToggleBtn.classList.toggle("bi-list");
-    mobileNavToggleBtn.classList.toggle("bi-x");
+function openMobileNav() {
+  document.body.classList.add("mobile-nav-active");
+  mobileNavToggleBtn.classList.remove("bi-list");
+  mobileNavToggleBtn.classList.add("bi-x");
+}
+
+function closeMobileNav() {
+  document.body.classList.remove("mobile-nav-active");
+  mobileNavToggleBtn.classList.remove("bi-x");
+  mobileNavToggleBtn.classList.add("bi-list");
+}
+
+function mobileNavToggle() {
+  if (document.body.classList.contains("mobile-nav-active")) {
+    closeMobileNav();
+  } else {
+    openMobileNav();
   }
-  mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
+}
 
-  /**
-   * Navbar active state on click and scroll
-   */
-  const navLinks = document.querySelectorAll("#navmenu a");
+if (mobileNavToggleBtn) {
+  mobileNavToggleBtn.addEventListener("click", mobileNavToggle);
+}
+ /**
+ * Premium Active Navbar
+ */
 
-  function setActiveNavLink(link) {
-    navLinks.forEach((item) => item.classList.remove("active"));
-    link.classList.add("active");
-  }
+const navLinks = document.querySelectorAll("#navmenu a");
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      setActiveNavLink(link);
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
 
-      if (document.querySelector(".mobile-nav-active")) {
-        mobileNavToogle();
-      }
-    });
+    setActiveNavLink(link);
+
+    if (window.innerWidth < 1200) {
+      closeMobileNav();
+    }
+
+  });
+});
+
+document.querySelectorAll('a[data-scroll]').forEach((link) => {
+
+  link.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    const target = document.querySelector(this.getAttribute("href"));
+
+    closeMobileNav();
+
+    setTimeout(() => {
+
+      target?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+    }, 250);
+
   });
 
-  function updateActiveNavOnScroll() {
-    const sections = document.querySelectorAll("main section[id]");
-    const scrollPosition = window.scrollY + 220;
-    let matchedSection = null;
+});
 
-    sections.forEach((section) => {
-      if (scrollPosition >= section.offsetTop) {
-        matchedSection = section;
+window.addEventListener("load", () => {
+
+  const sections = document.querySelectorAll("main section[id]");
+
+  if (!sections.length) return;
+
+  const observer = new IntersectionObserver(
+
+  (entries) => {
+
+    entries.forEach((entry) => {
+
+      if (!entry.isIntersecting) return;
+
+      const id = entry.target.getAttribute("id");
+
+      let navLink = null;
+
+      switch (id) {
+
+        case "hero":
+          navLink = document.querySelector(
+            '#navmenu a[href="index.html"]'
+          );
+          break;
+
+        default:
+          navLink = document.querySelector(
+            `#navmenu a[href="#${id}"]`
+          );
+
       }
+
+      if (navLink) {
+
+        setActiveNavLink(navLink);
+
+      }
+
     });
 
-    if (!matchedSection) {
-      const homeLink = document.querySelector(
-        '#navmenu a[href="index.html#hero"]',
-      );
-      if (homeLink) setActiveNavLink(homeLink);
-      return;
-    }
+  },
 
-    const sectionId = matchedSection.getAttribute("id");
-    const matchingNavLink = document.querySelector(
-      `#navmenu a[href="#${sectionId}"]`,
-    );
+  {
 
-    if (matchingNavLink) {
-      setActiveNavLink(matchingNavLink);
-    } else {
-      const homeLink = document.querySelector(
-        '#navmenu a[href="index.html#hero"]',
-      );
-      if (homeLink) setActiveNavLink(homeLink);
-    }
+    rootMargin: "-120px 0px -45% 0px",
+
+    threshold: 0.35,
+
   }
 
-  window.addEventListener("load", updateActiveNavOnScroll);
-  document.addEventListener("scroll", updateActiveNavOnScroll);
+);
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
 
+}); // <-- menutup window.addEventListener("load", () => {
   /**
    * Toggle mobile nav dropdowns
    */
