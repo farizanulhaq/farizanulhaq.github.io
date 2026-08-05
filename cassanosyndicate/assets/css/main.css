@@ -66,6 +66,11 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+main, .hero-section {
+  /* Berikan margin-top sebesar tinggi header/navbar */
+  margin-top: 80px; 
+}
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
