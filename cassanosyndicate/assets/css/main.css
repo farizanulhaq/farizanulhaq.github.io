@@ -66,9 +66,10 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
-main, .hero-section {
+main,
+.hero-section {
   /* Berikan margin-top sebesar tinggi header/navbar */
-  margin-top: 80px; 
+  margin-top: 80px;
 }
 
 body {
@@ -99,384 +100,221 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #ff6a00;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /*--------------------------------------------------------------
 # Global Header - Premium Cassano
 --------------------------------------------------------------*/
 
-.header{
-  position:fixed;
-  inset:0 0 auto 0;
-  z-index:997;
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 997;
 
-  padding:18px 0;
+  padding: 18px 0;
 
-  background:rgba(8,8,8,.18);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
+  background: rgba(8, 8, 8, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
-  border-bottom:1px solid rgba(255,255,255,.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
   transition:
-    background .45s ease,
-    border-color .45s ease,
-    padding .45s ease,
-    box-shadow .45s ease;
+    background 0.45s ease,
+    border-color 0.45s ease,
+    padding 0.45s ease,
+    box-shadow 0.45s ease;
 }
 
-.scrolled .header{
+.scrolled .header {
+  padding: 20px 0;
 
-  padding:20px 0;
+  background: rgba(8, 8, 8, 0.82);
 
-  background:rgba(8,8,8,.82);
-
-  border-bottom:1px solid rgba(255,106,0,.12);
+  border-bottom: 1px solid rgba(255, 106, 0, 0.12);
 
   box-shadow:
-    0 15px 40px rgba(0,0,0,.45),
-    inset 0 -1px 0 rgba(255,106,0,.08);
-
+    0 15px 40px rgba(0, 0, 0, 0.45),
+    inset 0 -1px 0 rgba(255, 106, 0, 0.08);
 }
 
-/*==========================================
-Logo
-==========================================*/
-
-.header .logo{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:16px;
-
-  text-decoration:none;
-
-  transition:.35s;
-
-}
-
-.header .logo img{
-
-  width:68px!important;
-
-  height:auto!important;
-
-  transition:
-    transform .45s ease,
-    filter .45s ease;
-
-}
-
-.header .logo h1{
-
-  margin:0;
-
-  font-size:33px;
-
-  font-weight:400;
-
-  color:#fff;
-
-  transition:
-    color .35s ease,
-    letter-spacing .35s ease;
-
-}
-
-/* Premium Hover */
-
-.header .logo:hover img{
-
-  transform:rotate(-4deg) scale(1.08);
-
-  filter:
-    drop-shadow(0 0 14px rgba(255,106,0,.55))
-    drop-shadow(0 0 28px rgba(255,106,0,.25));
-
-}
-
-.header .logo:hover h1{
-
-  color:var(--accent-color);
-
-  letter-spacing:.8px;
-
-}
-
-/*==========================================
-Social
-==========================================*/
-
-.header .header-social-links{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:16px;
-
-}
-
-.header .header-social-links a{
-
-  color:rgba(255,255,255,.55);
-
-  font-size:17px;
-
-  transition:
-    color .35s ease,
-    transform .35s ease,
-    text-shadow .35s ease;
-
-}
-
-.header .header-social-links a:hover{
-
-  color:var(--accent-color);
-
-  transform:translateY(-2px);
-
-  text-shadow:0 0 15px rgba(255,106,0,.55);
-
-}
-
-/*==========================================
-Mobile
-==========================================*/
-
-@media(max-width:1200px){
-
-.header{
-
-padding:15px 0;
-
-}
-
-.header .logo img{
-
-width:56px!important;
-
-}
-
-.header .logo h1{
-
-font-size:28px;
-
-}
-
-.header .header-social-links{
-
-order:2;
-
-gap:12px;
-
-}
-
-.header .navmenu{
-
-order:3;
-
-}
-
-}
-
-/*==============================================================
-# Premium Brand Identity (Cassano)
-==============================================================*/
+/* =========================================================
+   CASSANO HEADER BRAND
+   ========================================================= */
 
 .header .logo {
   position: relative;
+
   display: inline-flex;
   align-items: center;
+
   gap: 14px;
 
   padding: 10px 0;
 
   text-decoration: none;
 
-  transition:
-    transform .35s cubic-bezier(.22,.61,.36,1),
-    opacity .35s;
+  transition: opacity 0.35s ease;
 }
 
+
+/* =========================================================
+   LOGO IMAGE
+   ========================================================= */
+
 .header .logo img {
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
+
   object-fit: contain;
 
   transition:
-    transform .45s cubic-bezier(.22,.61,.36,1),
-    filter .45s;
+    transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
+    filter 0.45s ease;
 }
+
+
+/* =========================================================
+   BRAND NAME
+   ========================================================= */
 
 .header .logo .sitename {
+  margin: 0;
 
-  margin:0;
+  color: #fff;
 
-  color:#fff;
+  font-size: 30px;
+  font-weight: 400;
 
-  font-size:30px;
+  letter-spacing: 0.2px;
 
-  font-weight:400;
+  transition: none;
+}
 
-  letter-spacing:.2px;
+
+/* =========================================================
+   LOGO HOVER
+   ========================================================= */
+
+.header .logo:hover {
+  transform: none;
+
+  background: transparent;
+  box-shadow: none;
+}
+
+
+/* Logo glow only */
+
+.header .logo:hover img {
+  transform: scale(1.03);
+
+  filter:
+    drop-shadow(0 0 5px rgba(255, 106, 0, 0.45))
+    drop-shadow(0 0 12px rgba(255, 106, 0, 0.18));
+}
+
+
+/* Brand name stays white */
+
+.header .logo:hover .sitename {
+  color: #fff;
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   SOCIAL
+   ========================================================= */
+
+.header .header-social-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+}
+
+.header .header-social-links a {
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 17px;
+
+  background: transparent;
+  box-shadow: none;
 
   transition:
-      color .35s,
-      letter-spacing .35s;
+    color 0.35s ease,
+    transform 0.35s ease,
+    text-shadow 0.35s ease;
 }
 
-/* underline */
+.header .header-social-links a:hover {
+  color: var(--accent-color);
 
-.header .logo::after{
+  background: transparent;
+  box-shadow: none;
 
-    content:"";
+  transform: translateY(-2px);
 
-    position:absolute;
-
-    left:70px;
-
-    bottom:2px;
-
-    width:0;
-
-    height:1px;
-
-    background:linear-gradient(
-        90deg,
-        var(--accent-color),
-        transparent
-    );
-
-    transition:width .45s ease;
-
-    opacity:.9;
-
+  text-shadow:
+    0 0 8px rgba(255, 106, 0, 0.45),
+    0 0 15px rgba(255, 106, 0, 0.20);
 }
 
-/* ambient glow */
 
-.header .logo::before{
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
 
-    content:"";
+@media (max-width: 1200px) {
 
-    position:absolute;
+  .header {
+    padding: 15px 0;
+  }
 
-    width:58px;
+  .header .logo img {
+    width: 72px !important;
+    height: 72px !important;
+  }
 
-    height:58px;
+  .header .logo .sitename {
+    font-size: 28px;
+  }
 
-    left:-2px;
+  .header .header-social-links {
+    order: 2;
 
-    top:50%;
+    gap: 12px;
+  }
 
-    transform:translateY(-50%);
-
-    border-radius:50%;
-
-    background:radial-gradient(
-        circle,
-        rgba(255,106,0,.16),
-        transparent 70%
-    );
-
-    opacity:0;
-
-    transition:.45s;
+  .header .navmenu {
+    order: 3;
+  }
 
 }
 
-/* hover */
 
-.header .logo:hover{
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-    transform:translateY(-2px);
+@media (max-width: 767px) {
 
-}
+  .header .logo {
+    gap: 10px;
+  }
 
-.header .logo:hover img{
+  .header .logo img {
+    width: 52px !important;
+    height: 52px !important;
+  }
 
-    transform:scale(1.05);
+  .header .logo .sitename {
+    font-size: 24px;
+  }
 
-    filter:drop-shadow(0 0 10px rgba(255,106,0,.35));
-
-}
-
-.header .logo:hover .sitename{
-
-    color:var(--accent-color);
-
-    letter-spacing:.6px;
-
-}
-
-.header .logo:hover::before{
-
-    opacity:1;
-
-}
-
-.header .logo:hover::after{
-
-    width:170px;
-
-}
-
-.header .logo:active{
-
-    transform:scale(.985);
+  .header .header-social-links {
+    gap: 10px;
+  }
 
 }
 
@@ -875,7 +713,6 @@ order:3;
     font-size: 34px;
 
     color: var(--default-color);
-
   }
 
   .mobile-nav-active .mobile-nav-toggle:hover {
@@ -890,7 +727,6 @@ order:3;
     gap: 15px;
   }
 }
-
 
 /*--------------------------------------------------------------
 # Mobile Navigation Animation
@@ -1555,7 +1391,7 @@ section,
       rgba(0, 0, 0, 0.6) 40%,
       rgba(0, 0, 0, 0.5) 100%
     ),
-    url("../img/background-headline.jpeg") center right/cover no-repeat;
+    url("../img/background-headline.webp") center right/cover no-repeat;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -2759,6 +2595,579 @@ section,
 .contact-cta-card .btn-primary:hover {
   background: color-mix(in srgb, var(--accent-color) 90%, white 10%);
   box-shadow: 0 0 35px rgba(255, 106, 0, 0.45);
+}
+
+/* =========================================================
+   CASSANO PROTOCOL
+   Scoped styles — will not affect other pages
+   ========================================================= */
+
+/* =========================================================
+   OFFICIAL DOCUMENT REQUEST
+   ========================================================= */
+
+.protocol-page .protocol-document-request {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  margin-top: 70px;
+  padding: 28px 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.protocol-page .protocol-document-request-content {
+  max-width: 620px;
+}
+
+.protocol-page .protocol-document-request-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  opacity: 0.4;
+}
+
+.protocol-page .protocol-document-request h3 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.protocol-page .protocol-document-request p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  opacity: 0.55;
+}
+
+/* =========================================================
+   OFFICIAL DOCUMENT REQUEST LINK
+   ========================================================= */
+
+.protocol-page .protocol-document-request-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  flex-shrink: 0;
+
+  padding: 10px 0;
+
+  color: rgba(255, 255, 255, 0.78);
+  background: transparent;
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 0;
+
+  box-shadow: none;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.protocol-page .protocol-document-request-link:hover {
+  color: #ff7a00;
+
+  background: transparent;
+  border-color: #ff7a00;
+
+  box-shadow: none;
+  transform: none;
+
+  gap: 16px;
+}
+
+.protocol-page .protocol-document-request-link:focus {
+  outline: none;
+
+  background: transparent;
+  box-shadow: none;
+}
+
+.protocol-page .protocol-document-request-arrow {
+  font-size: 15px;
+  line-height: 1;
+
+  opacity: 0.65;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.protocol-page
+  .protocol-document-request-link:hover
+  .protocol-document-request-arrow {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .protocol-page .protocol-document-request {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 24px;
+
+    padding: 24px;
+  }
+
+  .protocol-page .protocol-document-request h3 {
+    font-size: 16px;
+  }
+}
+
+/* =========================================================
+   PROTOCOL CONTENTS
+   ========================================================= */
+
+.protocol-page .protocol-contents {
+  margin-bottom: 40px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  overflow: hidden;
+}
+
+.protocol-page .protocol-contents-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 22px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.protocol-page .protocol-contents-head span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  opacity: 0.4;
+}
+
+.protocol-page .protocol-contents-head strong {
+  font-size: 13px;
+  font-weight: 600;
+
+  opacity: 0.75;
+}
+
+.protocol-page .protocol-contents-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.protocol-page .protocol-contents-list a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 22px;
+
+  color: inherit;
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  transition:
+    background-color 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+.protocol-page .protocol-contents-list a:nth-child(odd) {
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.protocol-page .protocol-contents-list a span:first-child {
+  min-width: 22px;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  opacity: 0.35;
+}
+
+.protocol-page .protocol-contents-list a span:last-child {
+  font-size: 13px;
+  line-height: 1.4;
+
+  opacity: 0.65;
+
+  transition: opacity 0.25s ease;
+}
+
+.protocol-page .protocol-contents-list a:hover {
+  padding-left: 26px;
+
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.protocol-page .protocol-contents-list a:hover span:last-child {
+  opacity: 1;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .protocol-page .protocol-contents-list {
+    grid-template-columns: 1fr;
+  }
+
+  .protocol-page .protocol-contents-list a:nth-child(odd) {
+    border-right: none;
+  }
+
+  .protocol-page .protocol-contents-head {
+    padding: 16px 18px;
+  }
+
+  .protocol-page .protocol-contents-list a {
+    padding: 13px 18px;
+  }
+}
+
+.protocol-page {
+  padding: 120px 0 80px;
+}
+
+.protocol-page .protocol-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+
+.protocol-page .protocol-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.protocol-page .protocol-kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+.protocol-page .protocol-title {
+  margin: 0;
+
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.05;
+}
+
+.protocol-page .protocol-subtitle {
+  margin: 18px auto 0;
+  max-width: 620px;
+
+  font-size: 15px;
+  line-height: 1.8;
+  opacity: 0.6;
+}
+
+.protocol-page .protocol-meta {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  margin-top: 28px;
+
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+/* ---------- Document ---------- */
+
+.protocol-page .protocol-document {
+  padding: 50px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+/* ---------- Sections ---------- */
+
+.protocol-page .protocol-section {
+  padding: 38px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.protocol-page .protocol-section:first-child {
+  padding-top: 0;
+}
+
+.protocol-page .protocol-section:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.protocol-page .protocol-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.protocol-page .protocol-section-head > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.protocol-page .protocol-number {
+  flex-shrink: 0;
+
+  min-width: 32px;
+
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  opacity: 0.7;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 7px 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+}
+
+.protocol-page .protocol-section h2 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.protocol-page .protocol-section p {
+  margin: 0 0 16px;
+
+  font-size: 18px;
+  line-height: 1.85;
+  opacity: 0.72;
+}
+
+.protocol-page .protocol-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Lists ---------- */
+
+.protocol-page .protocol-list {
+  margin: 18px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.protocol-page .protocol-list li {
+  position: relative;
+
+  margin-bottom: 14px;
+  padding-left: 20px;
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  opacity: 0.72;
+}
+
+.protocol-page .protocol-list li::before {
+  content: "";
+
+  position: absolute;
+  top: 0.75em;
+  left: 0;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: currentColor;
+
+  opacity: 0.45;
+}
+
+/* ---------- Highlight ---------- */
+
+.protocol-page .protocol-note {
+  margin-top: 24px;
+  padding: 18px 20px;
+
+  border-left: 2px solid currentColor;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.protocol-page .protocol-note p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ---------- Declaration ---------- */
+
+.protocol-page .protocol-declaration {
+  margin-top: 50px;
+  padding-top: 35px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  text-align: center;
+}
+
+.protocol-page .protocol-declaration h3 {
+  margin: 0 0 14px;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.protocol-page .protocol-declaration p {
+  max-width: 650px;
+  margin: 0 auto;
+
+  font-size: 13px;
+  line-height: 1.8;
+  opacity: 0.6;
+}
+
+/* ---------- Signature ---------- */
+
+.protocol-page .protocol-signature {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  margin-top: 55px;
+}
+
+.protocol-page .signature-box {
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  text-align: center;
+}
+
+.protocol-page .signature-box strong {
+  display: block;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.protocol-page .signature-box span {
+  display: block;
+  margin-top: 5px;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  opacity: 0.45;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 767px) {
+  .protocol-page {
+    padding: 100px 0 60px;
+  }
+
+  .protocol-page .protocol-container {
+    width: calc(100% - 30px);
+  }
+
+  .protocol-page .protocol-header {
+    margin-bottom: 45px;
+  }
+
+  .protocol-page .protocol-title {
+    font-size: 40px;
+  }
+
+  .protocol-page .protocol-document {
+    padding: 28px 22px;
+    border-radius: 10px;
+  }
+
+  .protocol-page .protocol-section {
+    padding: 30px 0;
+  }
+
+  .protocol-page .protocol-section-head {
+    gap: 12px;
+  }
+
+  .protocol-page .protocol-section h2 {
+    font-size: 18px;
+  }
+
+  .protocol-page .protocol-section p,
+  .protocol-page .protocol-list li {
+    font-size: 15px;
+  }
+
+  .protocol-page .protocol-signature {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
 }
 
 @media (max-width: 768px) {
