@@ -235,7 +235,7 @@ window.addEventListener("load", () => {
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    const audio = new Audio("/assets/audio/PSC-Do-Ya-Thang.mp3");
+    const audio = new Audio("../assets/audio/PSC-Do-Ya-Thang.mp3");
     audio.loop = true;
 
     audio.play().catch(() => {
