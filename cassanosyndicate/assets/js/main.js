@@ -234,5 +234,14 @@ window.addEventListener("load", () => {
     });
   }
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const audio = new Audio("/assets/audio/PSC-Do-Ya-Thang.mp3");
+    audio.loop = true;
+
+    audio.play().catch(() => {
+        console.log("Autoplay blocked by browser.");
+    });
+});
+
   window.addEventListener("load", initSwiper);
 })();
