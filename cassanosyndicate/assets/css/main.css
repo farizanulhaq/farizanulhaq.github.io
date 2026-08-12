@@ -155,7 +155,6 @@ h6 {
   transition: opacity 0.35s ease;
 }
 
-
 /* =========================================================
    LOGO IMAGE
    ========================================================= */
@@ -170,7 +169,6 @@ h6 {
     transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
     filter 0.45s ease;
 }
-
 
 /* =========================================================
    BRAND NAME
@@ -189,7 +187,6 @@ h6 {
   transition: none;
 }
 
-
 /* =========================================================
    LOGO HOVER
    ========================================================= */
@@ -201,17 +198,14 @@ h6 {
   box-shadow: none;
 }
 
-
 /* Logo glow only */
 
 .header .logo:hover img {
   transform: scale(1.03);
 
-  filter:
-    drop-shadow(0 0 5px rgba(255, 106, 0, 0.45))
+  filter: drop-shadow(0 0 5px rgba(255, 106, 0, 0.45))
     drop-shadow(0 0 12px rgba(255, 106, 0, 0.18));
 }
-
 
 /* Brand name stays white */
 
@@ -219,7 +213,6 @@ h6 {
   color: #fff;
   letter-spacing: 0.2px;
 }
-
 
 /* =========================================================
    SOCIAL
@@ -257,16 +250,14 @@ h6 {
 
   text-shadow:
     0 0 8px rgba(255, 106, 0, 0.45),
-    0 0 15px rgba(255, 106, 0, 0.20);
+    0 0 15px rgba(255, 106, 0, 0.2);
 }
-
 
 /* =========================================================
    MOBILE / TABLET
    ========================================================= */
 
 @media (max-width: 1200px) {
-
   .header {
     padding: 15px 0;
   }
@@ -289,16 +280,13 @@ h6 {
   .header .navmenu {
     order: 3;
   }
-
 }
-
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
 @media (max-width: 767px) {
-
   .header .logo {
     gap: 10px;
   }
@@ -315,7 +303,6 @@ h6 {
   .header .header-social-links {
     gap: 10px;
   }
-
 }
 
 /*--------------------------------------------------------------
@@ -1819,14 +1806,16 @@ section,
 }
 
 /*--------------------------------------------------------------
-# officers Section
+# Officers Section
 --------------------------------------------------------------*/
+
 .officers {
   padding: 80px 0;
   background: var(--background-color);
 }
 
 .officer-card {
+  height: 100%;
   background: var(--surface-color);
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -1860,7 +1849,52 @@ section,
   color: var(--accent-color);
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 0 0 20px 0;
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Officer Application
+--------------------------------------------------------------*/
+
+.officer-apply {
+  display: block;
+  height: 16px;
+  margin: 8px 0 20px;
+
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  color: var(--default-color);
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    letter-spacing 0.3s ease;
+}
+
+/* Vacant Position */
+
+.officer-vacant {
+  cursor: pointer;
+}
+
+.officer-vacant a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.officer-vacant h4 {
+  color: var(--default-color);
+}
+
+.officer-vacant .officer-apply {
+  opacity: 0.55;
+}
+
+.officer-vacant:hover .officer-apply {
+  opacity: 1;
+  letter-spacing: 2px;
 }
 
 /*--------------------------------------------------------------
