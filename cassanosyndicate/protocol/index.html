@@ -42,7 +42,34 @@
     <link href="../assets/css/main.css" rel="stylesheet" />
   </head>
 
-  <body class="index-page">
+  <body class="protocol-page">
+    <!-- Cassano Sound System -->
+
+    <div id="sound-entrance" class="sound-entrance">
+      <div class="sound-entrance-content">
+        <div class="sound-entrance-brand">CASSANO SYNDICATE</div>
+
+        <div class="sound-entrance-line"></div>
+
+        <p>FROM SYNDICATE TO BROTHERHOOD</p>
+
+        <button id="enter-site" type="button">ENTER SITE</button>
+
+        <span class="sound-hint">♪ SOUND ON</span>
+      </div>
+    </div>
+
+    <audio id="background-music" loop preload="auto">
+      <source src="../assets/audio/PSC-Do-Ya-Thang.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button id="sound-control" class="sound-control" type="button">
+      ♪ SOUND ON
+    </button>
+
+    <script src="../assets/js/sound.js"></script>
+
+    <!-- Header -->
     <header id="header" class="header d-flex align-items-center sticky-top">
       <div
         class="container-fluid position-relative d-flex align-items-center justify-content-between"
@@ -55,6 +82,7 @@
             src="../assets/img/CassanoSyndicate-logo.webp"
             alt="Cassano Syndicate"
           />
+
           <h1 class="sitename" style="padding-left: 10px; font-size: 30px">
             Cassano Syndicate
           </h1>
@@ -64,19 +92,30 @@
           <ul>
             <li><a href="../index.html">HOME</a></li>
             <li><a href="../about.html">INFO</a></li>
-            <li><a href="../events.html" class="coming-soon">EVENTS</a></li>
+            <li>
+              <a href="../events.html" class="coming-soon">EVENTS</a>
+            </li>
             <li><a href="../index.html#officers">OFFICERS</a></li>
             <li><a href="../index.html#gallery">GALLERY</a></li>
             <li><a href="../contact.html">CONTACT</a></li>
             <li><a href="./" class="active">PROTOCOL</a></li>
           </ul>
+
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
         <div class="header-social-links">
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="youtube"><i class="bi bi-youtube"></i></a>
-          <a href="#" class="tiktok"><i class="bi bi-tiktok"></i></a>
+          <a href="#" class="instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+
+          <a href="#" class="youtube">
+            <i class="bi bi-youtube"></i>
+          </a>
+
+          <a href="#" class="tiktok">
+            <i class="bi bi-tiktok"></i>
+          </a>
         </div>
       </div>
     </header>
@@ -609,7 +648,8 @@
 
             <p>
               Untuk tahap awal, kepemimpinan Cassano Syndicate dijalankan oleh
-              Founder sekaligus President bersama Vice President.
+              Founder sekaligus President. Posisi Vice President akan diisi
+              setelah kandidat yang sesuai ditetapkan.
             </p>
 
             <ul class="protocol-list">
@@ -796,54 +836,57 @@
           </div>
 
           <!-- =================================================
-             SIGNATURE
-             ================================================= -->
+   SIGNATURE
+   ================================================= -->
 
           <div class="protocol-signature">
             <div class="signature-box">
-              <span> Disahkan oleh </span>
+              <span>Disahkan oleh</span>
 
-              <strong> Franz Cassano </strong>
+              <strong>Franz Cassano</strong>
 
-              <small> Founder & President </small>
+              <small>Founder &amp; President</small>
             </div>
 
-            <!-- <div class="signature-box">
-              <span> Mengetahui </span>
+            <!--
+  <div class="signature-box">
+    <span>Mengetahui</span>
 
-              <strong> Kayeex Cassano </strong>
+    <strong>Kayeex Cassano</strong>
 
-              <small> Vice President </small>
-            </div>
-          </div> -->
-        </div>
-        <!-- =================================================
+    <small>Vice President</small>
+  </div>
+  -->
+          </div>
+          <!-- =================================================
      OFFICIAL DOCUMENT
      ================================================= -->
 
-        <div class="protocol-document-request">
-          <div class="protocol-document-request-content">
-            <span class="protocol-document-request-label">
-              Official Document
-            </span>
+          <div class="protocol-document-request">
+            <div class="protocol-document-request-content">
+              <span class="protocol-document-request-label">
+                Official Document
+              </span>
 
-            <h3>Membutuhkan dokumen resmi Cassano Protocol?</h3>
+              <h3>Membutuhkan dokumen resmi Cassano Protocol?</h3>
 
-            <p>
-              Dokumen resmi yang telah disahkan dan ditandatangani tersedia
-              melalui Cassano Syndicate.
-            </p>
+              <p>
+                Dokumen resmi yang telah disahkan dan ditandatangani tersedia
+                melalui Cassano Syndicate.
+              </p>
+            </div>
+
+            <a
+              href="https://wa.me/6285183156871?text=Halo%20Cassano%20Syndicate%2C%20saya%20ingin%20meminta%20dokumen%20resmi%20Cassano%20Protocol."
+              class="protocol-document-request-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Request Official Document</span>
+              <span class="protocol-document-request-arrow">→</span>
+            </a>
           </div>
-
-          <a
-            href="https://wa.me/6285183156871?text=Halo%20Cassano%20Syndicate%2C%20saya%20ingin%20meminta%20dokumen%20resmi%20Cassano%20Protocol."
-            class="protocol-document-request-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>Request Official Document</span>
-            <span class="protocol-document-request-arrow">→</span>
-          </a>
+          <!-- /protocol-document-request -->
         </div>
         <!-- /protocol-document -->
       </div>

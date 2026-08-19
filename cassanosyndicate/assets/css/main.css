@@ -3207,19 +3207,20 @@ section,
 }
 
 /* ==========================================================
-   Cassano Sound Entrance
+   CASSANO SOUND SYSTEM
    ========================================================== */
 
 .sound-entrance {
   position: fixed;
   inset: 0;
+
   z-index: 99999;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: #0a0a0a;
+  background: #080808;
 
   opacity: 1;
   visibility: visible;
@@ -3237,12 +3238,14 @@ section,
 
 .sound-entrance-content {
   width: min(90%, 500px);
+
   text-align: center;
 }
 
 .sound-entrance-brand {
   font-size: 14px;
   font-weight: 700;
+
   letter-spacing: 5px;
   text-transform: uppercase;
 }
@@ -3252,6 +3255,7 @@ section,
   height: 1px;
 
   margin: 18px auto;
+
   background: rgba(255, 255, 255, 0.35);
 }
 
@@ -3267,15 +3271,18 @@ section,
 
 #enter-site {
   appearance: none;
+
+  padding: 13px 32px;
+
   border: 1px solid rgba(255, 255, 255, 0.3);
+
   background: transparent;
 
   color: inherit;
 
-  padding: 13px 32px;
-
   font-size: 11px;
   font-weight: 600;
+
   letter-spacing: 2px;
 
   cursor: pointer;
@@ -3289,6 +3296,7 @@ section,
 #enter-site:hover {
   background: #fff;
   color: #000;
+
   border-color: #fff;
 }
 
@@ -3298,37 +3306,20 @@ section,
   margin-top: 18px;
 
   font-size: 9px;
+
   letter-spacing: 2px;
 
   opacity: 0.3;
 }
 
-/* ==========================================================
-   Mobile
-   ========================================================== */
-
-@media (max-width: 767px) {
-  .sound-entrance-brand {
-    font-size: 12px;
-    letter-spacing: 4px;
-  }
-
-  .sound-entrance-content p {
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  #enter-site {
-    padding: 12px 28px;
-  }
-}
 
 /* ==========================================================
-   Cassano Sound Control
+   SOUND CONTROL
    ========================================================== */
 
 .sound-control {
   position: fixed;
+
   right: 25px;
   bottom: 25px;
 
@@ -3340,11 +3331,13 @@ section,
   border-radius: 4px;
 
   background: rgba(10, 10, 10, 0.75);
+
   backdrop-filter: blur(8px);
 
   color: #fff;
 
   font-size: 9px;
+
   letter-spacing: 1.5px;
 
   cursor: pointer;
@@ -3359,17 +3352,38 @@ section,
 
 .sound-control:hover {
   opacity: 1;
+
   background: rgba(255, 255, 255, 0.08);
+
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Mobile */
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
 
 @media (max-width: 767px) {
+
+  .sound-entrance-brand {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .sound-entrance-content p {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  #enter-site {
+    padding: 12px 28px;
+  }
+
   .sound-control {
     right: 15px;
     bottom: 15px;
 
     padding: 9px 12px;
   }
+
 }
