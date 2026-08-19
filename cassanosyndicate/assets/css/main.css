@@ -3130,21 +3130,17 @@ section,
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-
   margin-top: 55px;
 }
 
 .protocol-page .signature-box {
   padding-top: 18px;
-
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-
   text-align: center;
 }
 
 .protocol-page .signature-box strong {
   display: block;
-
   font-size: 13px;
   font-weight: 600;
 }
@@ -3152,12 +3148,15 @@ section,
 .protocol-page .signature-box span {
   display: block;
   margin-top: 5px;
-
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
-
   opacity: 0.45;
+}
+
+/* Jika hanya 1 signature */
+.protocol-page .protocol-signature:has(.signature-box:only-child) {
+  grid-template-columns: 1fr;
 }
 
 /* ---------- Mobile ---------- */
@@ -3204,19 +3203,5 @@ section,
   .protocol-page .protocol-signature {
     grid-template-columns: 1fr;
     gap: 35px;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-title {
-    font-size: 32px;
-  }
-
-  .contact-description {
-    font-size: 16px;
-  }
-
-  .contact-cta-card {
-    padding: 28px 20px;
   }
 }
