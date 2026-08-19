@@ -207,18 +207,6 @@
       }
     });
   }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const audio = new Audio(
-      "/cassanosyndicate/assets/audio/PSC-Do-Ya-Thang.mp3",
-    );
-    audio.loop = true;
-
-    audio.play().catch(() => {
-      console.log("Autoplay blocked by browser.");
-    });
-  });
-
   window.addEventListener("load", initSwiper);
 })();
 
