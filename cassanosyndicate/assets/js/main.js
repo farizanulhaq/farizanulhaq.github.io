@@ -21,132 +21,106 @@
   document.addEventListener("scroll", toggleScrolled);
   window.addEventListener("load", toggleScrolled);
 
-/**
- * Mobile nav
- */
-const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+  /**
+   * Mobile nav
+   */
+  const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
 
-function openMobileNav() {
-  document.body.classList.add("mobile-nav-active");
-  mobileNavToggleBtn.classList.remove("bi-list");
-  mobileNavToggleBtn.classList.add("bi-x");
-}
-
-function closeMobileNav() {
-  document.body.classList.remove("mobile-nav-active");
-  mobileNavToggleBtn.classList.remove("bi-x");
-  mobileNavToggleBtn.classList.add("bi-list");
-}
-
-function mobileNavToggle() {
-  if (document.body.classList.contains("mobile-nav-active")) {
-    closeMobileNav();
-  } else {
-    openMobileNav();
+  function openMobileNav() {
+    document.body.classList.add("mobile-nav-active");
+    mobileNavToggleBtn.classList.remove("bi-list");
+    mobileNavToggleBtn.classList.add("bi-x");
   }
-}
 
-if (mobileNavToggleBtn) {
-  mobileNavToggleBtn.addEventListener("click", mobileNavToggle);
-}
- /**
- * Premium Active Navbar
- */
+  function closeMobileNav() {
+    document.body.classList.remove("mobile-nav-active");
+    mobileNavToggleBtn.classList.remove("bi-x");
+    mobileNavToggleBtn.classList.add("bi-list");
+  }
 
-const navLinks = document.querySelectorAll("#navmenu a");
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-
-    setActiveNavLink(link);
-
-    if (window.innerWidth < 1200) {
+  function mobileNavToggle() {
+    if (document.body.classList.contains("mobile-nav-active")) {
       closeMobileNav();
+    } else {
+      openMobileNav();
     }
-
-  });
-});
-
-document.querySelectorAll('a[data-scroll]').forEach((link) => {
-
-  link.addEventListener("click", function (e) {
-
-    e.preventDefault();
-
-    const target = document.querySelector(this.getAttribute("href"));
-
-    closeMobileNav();
-
-    setTimeout(() => {
-
-      target?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-
-    }, 250);
-
-  });
-
-});
-
-window.addEventListener("load", () => {
-
-  const sections = document.querySelectorAll("main section[id]");
-
-  if (!sections.length) return;
-
-  const observer = new IntersectionObserver(
-
-  (entries) => {
-
-    entries.forEach((entry) => {
-
-      if (!entry.isIntersecting) return;
-
-      const id = entry.target.getAttribute("id");
-
-      let navLink = null;
-
-      switch (id) {
-
-        case "hero":
-          navLink = document.querySelector(
-            '#navmenu a[href="index.html"]'
-          );
-          break;
-
-        default:
-          navLink = document.querySelector(
-            `#navmenu a[href="#${id}"]`
-          );
-
-      }
-
-      if (navLink) {
-
-        setActiveNavLink(navLink);
-
-      }
-
-    });
-
-  },
-
-  {
-
-    rootMargin: "-120px 0px -45% 0px",
-
-    threshold: 0.35,
-
   }
 
-);
-  sections.forEach((section) => {
-    observer.observe(section);
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.addEventListener("click", mobileNavToggle);
+  }
+  /**
+   * Premium Active Navbar
+   */
+
+  const navLinks = document.querySelectorAll("#navmenu a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      setActiveNavLink(link);
+
+      if (window.innerWidth < 1200) {
+        closeMobileNav();
+      }
+    });
   });
 
-}); // <-- menutup window.addEventListener("load", () => {
+  document.querySelectorAll("a[data-scroll]").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const target = document.querySelector(this.getAttribute("href"));
+
+      closeMobileNav();
+
+      setTimeout(() => {
+        target?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 250);
+    });
+  });
+
+  window.addEventListener("load", () => {
+    const sections = document.querySelectorAll("main section[id]");
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const id = entry.target.getAttribute("id");
+
+          let navLink = null;
+
+          switch (id) {
+            case "hero":
+              navLink = document.querySelector('#navmenu a[href="index.html"]');
+              break;
+
+            default:
+              navLink = document.querySelector(`#navmenu a[href="#${id}"]`);
+          }
+
+          if (navLink) {
+            setActiveNavLink(navLink);
+          }
+        });
+      },
+
+      {
+        rootMargin: "-120px 0px -45% 0px",
+
+        threshold: 0.35,
+      },
+    );
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  }); // <-- menutup window.addEventListener("load", () => {
   /**
    * Toggle mobile nav dropdowns
    */
@@ -235,13 +209,82 @@ window.addEventListener("load", () => {
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    const audio = new Audio("/cassanosyndicate/assets/audio/PSC-Do-Ya-Thang.mp3");
+    const audio = new Audio(
+      "/cassanosyndicate/assets/audio/PSC-Do-Ya-Thang.mp3",
+    );
     audio.loop = true;
 
     audio.play().catch(() => {
-        console.log("Autoplay blocked by browser.");
+      console.log("Autoplay blocked by browser.");
     });
-});
+  });
 
   window.addEventListener("load", initSwiper);
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const entrance = document.getElementById("sound-entrance");
+  const enterButton = document.getElementById("enter-site");
+  const music = document.getElementById("background-music");
+  const soundControl = document.getElementById("sound-control");
+
+  const soundEnabled = sessionStorage.getItem("cassanoSoundEnabled");
+
+  /* ==========================================================
+     Initial State
+     ========================================================== */
+
+  if (soundEnabled === "true") {
+    entrance.classList.add("hidden");
+
+    music.volume = 0.5;
+
+    music.play().catch(() => {
+      console.log("Autoplay prevented.");
+    });
+  }
+
+  /* ==========================================================
+     Enter Site
+     ========================================================== */
+
+  enterButton.addEventListener("click", function () {
+    music.volume = 0.5;
+
+    music
+      .play()
+      .then(() => {
+        sessionStorage.setItem("cassanoSoundEnabled", "true");
+
+        entrance.classList.add("hidden");
+
+        soundControl.textContent = "♪ SOUND ON";
+      })
+      .catch((error) => {
+        console.error("Audio failed to play:", error);
+
+        entrance.classList.add("hidden");
+      });
+  });
+
+  /* ==========================================================
+     Sound ON / OFF
+     ========================================================== */
+
+  soundControl.addEventListener("click", function () {
+    if (music.paused) {
+      music
+        .play()
+        .then(() => {
+          soundControl.textContent = "♪ SOUND ON";
+        })
+        .catch(() => {
+          console.log("Unable to play audio.");
+        });
+    } else {
+      music.pause();
+
+      soundControl.textContent = "♪ SOUND OFF";
+    }
+  });
+});
