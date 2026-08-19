@@ -2908,6 +2908,12 @@ section,
   margin: 0 auto;
 }
 
+/* ---------- Protocol Page ---------- */
+
+.protocol-page {
+  padding: 60px 0 50px;
+}
+
 /* ---------- Header ---------- */
 
 .protocol-page .protocol-header {
@@ -2918,18 +2924,15 @@ section,
 .protocol-page .protocol-kicker {
   display: inline-block;
   margin-bottom: 14px;
-
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
-
   opacity: 0.55;
 }
 
 .protocol-page .protocol-title {
   margin: 0;
-
   font-size: clamp(38px, 6vw, 64px);
   font-weight: 700;
   letter-spacing: -1px;
@@ -2939,7 +2942,6 @@ section,
 .protocol-page .protocol-subtitle {
   margin: 18px auto 0;
   max-width: 620px;
-
   font-size: 15px;
   line-height: 1.8;
   opacity: 0.6;
@@ -2950,9 +2952,7 @@ section,
   justify-content: center;
   gap: 24px;
   flex-wrap: wrap;
-
   margin-top: 28px;
-
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -3163,7 +3163,7 @@ section,
 
 @media (max-width: 767px) {
   .protocol-page {
-    padding: 100px 0 60px;
+    padding: 60px 0 50px;
   }
 
   .protocol-page .protocol-container {
